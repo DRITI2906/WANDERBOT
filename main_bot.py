@@ -4,7 +4,7 @@ import json
 from datetime import datetime, timedelta
 
 # Configuration
-GEMINI_API_KEY = "AIzaSyBPkVjk9aYoAvjDnHYPbHxD66A-DCIeC94"
+GEMINI_API_KEY = "AIzaSyCeF-B9zJwuSehrkv_jEBeNfgDa6RFlwJE"
 EVENT_API_KEY = "25UDUKITT5JIIZJDC3"
 IRCTC_API_KEY = "585fbd08a542ca3c10ad7c001c07de41"
 AVIATIONSTACK_API_KEY = "1f285cc528a60fd27f947b918aa048b9"
@@ -14,7 +14,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 def get_iata_code(city_name):
     prompt = f"What is the IATA code for {city_name}?"
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip() if response else "Unknown"
 
@@ -49,7 +49,7 @@ def get_flight_options(origin, destination):
 
 def get_itinerary(destination, experience, days):
     prompt = f"Generate a detailed {days}-day travel itinerary for {destination} focused on {experience}. The schedule should include specific timestamps for activities, travel, and meals. Ensure realism."
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text if response else "Couldn't generate an itinerary."
 

@@ -105,11 +105,11 @@ WanderBot utilizes Google's Generative AI (GenAI) to generate content and provid
 
 ## Developer Information
 
-Created with ❤️ by Deep Das. Connect with me on:
+Created with ❤️ by Driti Rathod . Connect with me on:
 
-- [GitHub](https://github.com/THE-DEEPDAS)
-- [LinkedIn](https://www.linkedin.com/in/deep-das-4b5aa527b/)
-- [Email](mailto:deepdblm@gmail.com)
+- [GitHub](https://github.com/DRITI2906)
+- [LinkedIn](https://www.linkedin.com/in/driti-rathod-ab038a294/)
+- [Email](mailto:dritirathod2906@gmail.com)
 
 "Making travel planning magical, one journey at a time."
 

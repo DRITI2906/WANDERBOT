@@ -8,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 # Configuration
-GEMINI_API_KEY = "AIzaSyB_G0L0lkcGn_Pu_4mSj4vNJsYbaj3wizI"
+GEMINI_API_KEY = "AIzaSyCeF-B9zJwuSehrkv_jEBeNfgDa6RFlwJE"
 EVENT_API_KEY = "AIDZRLNW2HGLNDOLIHPG"
 AVIATIONSTACK_API_KEY = "94ac4623810c8348b283768fac83dafc"
 
@@ -29,13 +29,13 @@ def load_and_resize_image(url, target_size=(400, 300)):
 
 def get_iata_code(city_name):
     prompt = f"What is the IATA code for {city_name}?"
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip() if response else "Unknown"
 
 def get_station_code(city_name):
     prompt = f"What is the main railway station code for {city_name} in India? Return only the station code in caps."
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip() if response else "Unknown"
 
@@ -63,7 +63,7 @@ def get_flight_options(origin, destination):
 def is_indian_city(city_name):
     """Check if a city is in India"""
     prompt = f"Is {city_name} a city in India? Answer only 'yes' or 'no'."
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip().lower() == "yes"
 
@@ -103,7 +103,7 @@ def get_hotel_suggestions(destination, itinerary):
         
         Ensure each hotel detail is on a new line with proper indentation using ├─ and └─."""
         
-        model = genai.GenerativeModel("gemini-pro")
+        model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(prompt)
         return response.text.strip().split('\n\n')
     except Exception as e:
@@ -114,7 +114,7 @@ def get_itinerary(destination, experience, days):
     The schedule should include specific timestamps for activities, travel, and meals. 
     Ensure realism and do not use asterisks (*) in the response. Use actual formatting like 'Important:' or 'Note:' instead."""
     
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text if response else "Couldn't generate an itinerary."
 
@@ -171,11 +171,11 @@ def show_developer_info():
         <div class='developer-card'>
             <h2>Meet the Developer 👨‍💻</h2>
             <div class='developer-content'>
-                <p>Created with ❤️ by Deep</p>
+                <p>Created with ❤️ by Driti </p>
                 <div class='social-links'>
-                    <a href="https://github.com/THE-DEEPDAS" target="_blank">GitHub 🐱</a>
-                    <a href="https://www.linkedin.com/in/deep-das-4b5aa527b/" target="_blank">LinkedIn 💼</a>
-                    <a href="mailto:deepdblm@gmail.com">Email ✉️</a>
+                    <a href="https://github.com/DRITI2906" target="_blank">GitHub 🐱</a>
+                    <a href="https://www.linkedin.com/in/driti-rathod-ab038a294/" target="_blank">LinkedIn 💼</a>
+                    <a href="mailto:dritirathod2906@gmail.com">Email ✉️</a>
                 </div>
                 <p class='developer-quote'>"Making travel planning magical, one journey at a time."</p>
             </div>
